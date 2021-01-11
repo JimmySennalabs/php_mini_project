@@ -17,15 +17,19 @@
 
     <div class="collapse navbar-collapse" id="navbarColor03">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.php">Index
-            <span class="sr-only">(current)</span>
-          </a>
+
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">User</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="add_user.php">Add user</a>
+            <a class="dropdown-item" href="user_d.php">User info</a>
+          </div>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="insert.php">Add data</a>
+          <a class="nav-link" href="add_employ.php">Add employ</a>
         </li>
-        
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu">
