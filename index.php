@@ -38,12 +38,21 @@ $read = $mysqli->query($query);
             <td><?php echo $row['age']; ?></td>
             <td><?php echo $row['text_user']; ?></td>
             <td class="w-25 ">  <img src="uploads/<?php echo  $row['images'] ."\" height=\"130\" width=\"150\> "; ?>">  </td>
-            <td><a href="single.php?posts=<?php echo  $row['id'];  ?>">Details</a></td>
+            <td><a href="index.php?posts=<?php echo  $row['id'];  ?>">Details</a></td>
           </tr>
         <?php } ?>
       </tbody>
     </table>
   </div>
 </div>
+
+<?php 
+ if(isset($_GET['posts'])){
+
+	$id=$_GET['posts'];
+}
+echo "<h1> $id </h1>"
+
+?>
 
 <?php include 'footer.php'; ?>

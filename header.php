@@ -6,6 +6,7 @@
   <title>Same Page Property</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 
 <body>
@@ -21,13 +22,17 @@
         <li class="nav-item dropdown ">
           <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">User</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="add_user.php">Add user</a>
-            <a class="dropdown-item" href="user_d.php">User info</a>
+            <a class="dropdown-item" href="add_user.php">Add User</a>
+            <a class="dropdown-item" href="user_d.php">User Info</a>
           </div>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="add_employ.php">Add employ</a>
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Employee</a>
+          <div class="dropdown-menu">
+          <a class="dropdown-item" href="add_employ.php">Add Employee</a>
+          <a class="dropdown-item" href="user_e.php">Employee info</a>
+
         </li>
 
         <li class="nav-item dropdown">
