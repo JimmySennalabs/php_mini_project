@@ -8,6 +8,7 @@ if ($mysqli->connect_error) {
   printf("can not connect databse %s\n", $mysqli->connect_error);
   exit();
 }
+
 if (isset($_POST['submit'])) {
   $name = $_POST['name'];
   $thin_shirt = $_POST['thin_shirt'];
