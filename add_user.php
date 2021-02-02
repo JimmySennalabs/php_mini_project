@@ -10,7 +10,7 @@ if ($mysqli->connect_error) {
 
 if (isset($_POST['submit'])) {
 
-$popoppo = 1;
+
   $name = $_POST['name'];
   $lastname = $_POST['lastname'];
   $tel = $_POST['tel'];
