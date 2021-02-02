@@ -8,16 +8,43 @@ if ($mysqli->connect_error) {
   printf("can not connect databse %s\n", $mysqli->connect_error);
   exit();
 }
-
 if (isset($_POST['submit'])) {
   $name = $_POST['name'];
-  $lastname = $_POST['lastname'];
-  $tel = $_POST['tel'];
-  $address = $_POST['address'];
+  $thin_shirt = $_POST['thin_shirt'];
+  $thin_shorts = $_POST['thin_shorts'];
+  $thin_skirt = $_POST['thin_skirt'];
+  $thin_dress = $_POST['thin_dress'];
+  $thick_shirt = $_POST['thick_shirt'];
+  $thick_shorts = $_POST['thick_shorts'];
+  $thick_skirt = $_POST['thick_skirt'];
+  $thick_dress = $_POST['thick_dress'];
+  $other = $_POST['other'];
+  $num = $thin_shirt + $thin_shorts + $thin_skirt + $thin_dress + $thick_shirt + $thick_shorts + $thick_skirt + $thick_dress + $other;
 
-  $query = "INSERT INTO `User`(`id`, `name`, `lastname`, `tel`, `address`) VALUES (null,'$name','$lastname','$tel','$address')";
+  $query = "SELECT `id` FROM `user`  WHERE name LIKE '%$name%'";
+  $read = $mysqli->query($query);
+  $name = $read->fetch_assoc();
+  $iduser =$name['id'];
+
+  $query = "INSERT INTO `lot_cloths`(`idlot_cloths`, `num_cloths`, `created_at`, `user_iduser`) VALUES (null,'$num',null,'$iduser')";
   $insert = $mysqli->query($query);
+
+  $query = "SELECT * FROM `lot_cloths` ORDER BY idlot_cloths DESC LIMIT 1";
+  $read = $mysqli->query($query);
+  $last_lot = $read->fetch_assoc();
+  $idlot = $last_lot['idlot_cloths'];
+
+  $query = "INSERT INTO `cloths`(`id_cloths`, `thin_shirt`, `thin_shorts`, `thin_skirt`, `thin_dress`, `thick_shirt`, `thick_shorts`, `thick_skirt`, `thick_dress`, `other`, `idlot_cloths`) VALUES (null,'$thin_shirt','$thin_shorts', '$thin_skirt', '$thin_dress','$thick_shirt', '$thick_shorts','$thick_skirt','$thick_dress','$other','$idlot')";
+  $insert = $mysqli->query($query);
+
 }
+
+?>
+
+
+<?php 
+  echo("<script>console.log('PHP: " . $thin_shirt . "');</script>");
+  echo("<script>console.log('PHP: " .  $idlot . "');</script>");
 ?>
 
 

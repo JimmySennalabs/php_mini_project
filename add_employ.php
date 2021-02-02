@@ -15,19 +15,19 @@ if (isset($_POST['submit'])) {
   $e_lastname = $_POST['e_lastname'];
   $e_tel = $_POST['e_tel'];
   $e_address = $_POST['e_address'];
+  $line = $_POST['line'];
   $role = $_POST['role'];
 
-  $query = "INSERT INTO `employ`(`id`, `role`, `e_name`, `e_lastname`, `e_tel`, `e_address`) VALUES (null,'$role','$e_name','$e_lastname','$e_tel','$e_address')";
+  $query = "INSERT INTO `employ`(`id`, `role`, `e_name`, `e_lastname`, `e_tel`, `e_address`, `line`) VALUES (null,'$role','$e_name','$e_lastname','$e_tel','$e_address','$line')";
   $insert = $mysqli->query($query);
 }
 ?>
 <div class="container">
   <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
     <legend>add employee</legend>
-    <hr>
     <div class="form-group">
     <label>role</label>
-    <select class="form-control" name="role" >
+    <select  name="role" >
       <option value="owner">owner</option>
       <option value="employee"> employee</option>
     </select>
@@ -52,10 +52,14 @@ if (isset($_POST['submit'])) {
       <label>address</label>
       <textarea class="form-control" name="e_address" rows="3"></textarea>
     </div>
+
+    <div class="form-group">
+      <label>line</label>
+      <input type="text" class="form-control" name="line" placeholder="Enter line">
+    </div>
     <button type="reset" class="btn btn-danger">Cancel</button>
     <button type="submit" name="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
-
 
 <?php include 'footer.php' ?>
