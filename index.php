@@ -32,14 +32,27 @@ $read = $mysqli->query($query);
       </thead>
       <tbody>
         <?php while ($row = $read->fetch_assoc()) { ?>
-          <tr class="table-active">
-            <th><?php echo $row['id']; ?></th>
-            <th><?php echo $row['name']; ?></th>
-            <td><?php echo $row['age']; ?></td>
-            <td><?php echo $row['text_user']; ?></td>
-            <td class="w-25 ">  <img src="uploads/<?php echo  $row['images'] ."\" height=\"130\" width=\"150\> "; ?>">  </td>
-            <td><a href="index.php?posts=<?php echo  $row['id'];  ?>">Details</a></td>
-          </tr>
+          <?php if(isset($_GET['posts'])){ ?>
+            <form>
+            <tr class="table-active">
+              <th><?php echo $row['id']; ?></th>
+              <th></th>
+              <td><?php echo $row['age']; ?></td>
+              <td><?php echo $row['text_user']; ?></td>
+              <td class="w-25 ">  <img src="uploads/<?php echo  $row['images'] ."\" height=\"130\" width=\"150\> "; ?>">  </td>
+              <td><a href="index.php?posts=<?php echo  $row['id'];  ?>">Details</a></td>
+            </tr>
+            </form>
+          <?php } else {?>
+            <tr class="table-active">
+              <th><?php echo $row['id']; ?></th>
+              <th><?php echo $row['name']; ?></th>
+              <td><?php echo $row['age']; ?></td>
+              <td><?php echo $row['text_user']; ?></td>
+              <td class="w-25 ">  <img src="uploads/<?php echo  $row['images'] ."\" height=\"130\" width=\"150\> "; ?>">  </td>
+              <td><a href="index.php?posts=<?php echo  $row['id'];  ?>">Details</a></td>
+            </tr>
+          <?php } ?>
         <?php } ?>
       </tbody>
     </table>
