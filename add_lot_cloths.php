@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
   $name = $read->fetch_assoc();
   $iduser =$name['id'];
 
-  $query = "INSERT INTO `lot_cloths`(`idlot_cloths`, `num_cloths`, `created_at`, `user_iduser`) VALUES (null,'$num',null,'$iduser')";
+  $query = "INSERT INTO `lot_cloths`(`idlot_cloths`, `num_cloths`, `created_at`, `user_iduser`,`status`) VALUES (null,'$num',null,'$iduser','wait for wash')";
   $insert = $mysqli->query($query);
 
   $query = "SELECT * FROM `lot_cloths` ORDER BY idlot_cloths DESC LIMIT 1";

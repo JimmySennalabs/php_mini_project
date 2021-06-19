@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 
 <div class="container-fluid">
   <div class="container">
-    <h2>User </h2>
+    <h2>Employee </h2>
     <hr>
     <table class="table table-hover">
       <thead>
